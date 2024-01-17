@@ -1,3 +1,3 @@
 # Projeto para testar novas libs
 
-> Shadcn + TanStack + Vite
+> Shadcn + TanStack + Tailwind + Vite
