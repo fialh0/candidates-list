@@ -8,7 +8,7 @@ import { z } from "zod";
 
 const candidatesFiltersSchema = z.object({
   id: z.string(),
-  firstName: z.string(),
+  name: z.string(),
 });
 
 type CandidatesFiltersSchema = z.infer<typeof candidatesFiltersSchema>;
@@ -17,17 +17,17 @@ export function CandidatesFilters() {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const id = searchParams.get("id");
-  const firstName = searchParams.get("firstName");
+  const name = searchParams.get("name");
 
   const { register, handleSubmit } = useForm<CandidatesFiltersSchema>({
     resolver: zodResolver(candidatesFiltersSchema),
     values: {
       id: id ?? "",
-      firstName: firstName ?? "",
+      name: name ?? "",
     },
   });
 
-  function handleFilterCandidates({ id, firstName }: CandidatesFiltersSchema) {
+  function handleFilterCandidates({ id, name }: CandidatesFiltersSchema) {
     setSearchParams((state) => {
       if (id) {
         state.set("id", id);
@@ -39,10 +39,10 @@ export function CandidatesFilters() {
     });
 
     setSearchParams((state) => {
-      if (firstName) {
-        state.set("firstName", firstName);
+      if (name) {
+        state.set("name", name);
       } else {
-        state.delete("firstName");
+        state.delete("name");
       }
 
       return state;
@@ -55,7 +55,7 @@ export function CandidatesFilters() {
       className="flex flex-col lg:flex-row items-center gap-2"
     >
       <Input placeholder="ID do candidate" {...register("id")} />
-      <Input placeholder="Name do candidate" {...register("firstName")} />
+      <Input placeholder="Name do candidate" {...register("name")} />
 
       <Button type="submit" variant="link">
         <Search className="size-4 mr-2" />

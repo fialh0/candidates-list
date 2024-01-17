@@ -20,8 +20,8 @@ import {
 } from "@/components/ui/drawer";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Candidate, createCandidateRequest } from "@/data/candidates";
 import { useMediaQuery } from "@/hooks/use-media-query";
+import { Candidate, createCandidateRequest } from "@/lib/fake-api-candidates";
 import { cn } from "@/lib/utils";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { DialogClose } from "@radix-ui/react-dialog";
@@ -118,7 +118,7 @@ function CandidateForm({ className, isComplete }: CandidateFormTypes) {
   const [searchParams] = useSearchParams();
 
   const id = searchParams.get("id");
-  const firstName = searchParams.get("firstName");
+  const name = searchParams.get("name");
 
   const queryClient = useQueryClient();
 
@@ -132,7 +132,7 @@ function CandidateForm({ className, isComplete }: CandidateFormTypes) {
       // const cached = queryClient.getQueryData(["candidates"]); // Items antes de serem atualizados
 
       queryClient.setQueryData<Candidate[]>(
-        ["candidates", id, firstName],
+        ["candidates", id, name],
         (data) => {
           if (!data) {
             return;

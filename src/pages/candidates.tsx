@@ -9,7 +9,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { getCandidates } from "@/data/candidates";
+import { getCandidates } from "@/lib/fake-api-candidates";
 import { useQuery } from "@tanstack/react-query";
 import { useSearchParams } from "react-router-dom";
 
@@ -17,14 +17,14 @@ export function Candidates() {
   const [searchParams] = useSearchParams();
 
   const id = searchParams.get("id");
-  const firstName = searchParams.get("firstName");
+  const name = searchParams.get("name");
 
   const { data: candidates, isLoading: candidatesLoading } = useQuery({
-    queryKey: ["candidates", id, firstName],
+    queryKey: ["candidates", id, name],
     queryFn: () =>
       getCandidates({
         id,
-        firstName,
+        name,
       }),
   });
 
