@@ -30,7 +30,7 @@ export function Candidates() {
 
   return (
     <div className="p-6 max-w-screen-xl mx-auto space-y-4">
-      <h1 className="text-5xl font-bold">Candidates</h1>
+      <h1 className="text-5xl font-bold mb-16">Candidates</h1>
 
       <div className="flex flex-col lg:flex-row lg:items-center justify-between">
         <CandidatesFilters />
