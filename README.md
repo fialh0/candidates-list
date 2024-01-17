@@ -1,3 +1,3 @@
-# React + TypeScript + Vite
+# Projeto para testar novas libs
 
-> Shadcn + TanStack
+> Shadcn + TanStack + Vite
