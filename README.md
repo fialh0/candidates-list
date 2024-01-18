@@ -1,7 +1,12 @@
 # Listagem de candidates
 
-> Shadcn + TanStack + Tailwind
+## Stacks
+- [Vite](https://vitejs.dev/)
+- [Shadcn-ui](https://ui.shadcn.com/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [TanStack Query](https://tanstack.com/query/latest/docs/react/overview)
 
+## Descrição
 O projeto consiste em uma listagem de candidates onde podemos adicionar novos candidates e filtrar por `id` ou `nome`.
 
 - Estamos usando `shadcn-ui` para montar os componentes em tela:
