@@ -5,6 +5,9 @@
 - [Shadcn-ui](https://ui.shadcn.com/)
 - [TailwindCSS](https://tailwindcss.com/)
 - [TanStack Query](https://tanstack.com/query/latest/docs/react/overview)
+- [React hook form](https://react-hook-form.com/)
+- [Zod](https://zod.dev/)
+- [React router dom](https://reactrouter.com/en/main)
 
 ## Descrição
 O projeto consiste em uma listagem de candidates onde podemos adicionar novos candidates e filtrar por `id` ou `nome`.
