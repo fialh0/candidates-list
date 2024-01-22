@@ -36,7 +36,7 @@ import { z } from "zod";
 const createCandidateSchema = z.object({
   firstName: z.string(),
   lastName: z.string(),
-  age: z.coerce.number(), // Vou receber como string do front e mandar para o back como number
+  age: z.coerce.number(), // Vou receber como string do front e converter para o back como number
 });
 
 type CreateCandidateSchema = z.infer<typeof createCandidateSchema>;

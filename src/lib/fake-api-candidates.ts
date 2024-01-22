@@ -16,6 +16,10 @@ export async function getCandidates({ id, name }: GetCandidateFilters) {
   // Delay de 1s para simular a chamada de uma API
   await new Promise((resolve) => setTimeout(resolve, 1000));
 
+  /*
+    * Limitação: A busca só funciona nos dados de `candidates`. Quando se adiciona um novo item na lista
+    * a busca não funciona, pois a referência não capta a lista do front, apenas o que já estava no "fake-storage".
+  */
   let candidatesData = candidates;
 
   if (id) {
