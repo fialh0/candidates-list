@@ -48,12 +48,9 @@ export function Candidates() {
           </div>
 
           <div className="flex flex-col gap-4">
-            <Skeleton className="w-[100%] h-[37px] " />
-            <Skeleton className="w-[100%] h-[37px] " />
-            <Skeleton className="w-[100%] h-[37px] " />
-            <Skeleton className="w-[100%] h-[37px] " />
-            <Skeleton className="w-[100%] h-[37px] " />
-            <Skeleton className="w-[100%] h-[37px] " />
+            {Array.from({ length: 10 }).map((_, index) => (
+              <Skeleton key={index} className="w-[100%] h-[37px] " />
+            ))}
           </div>
         </div>
       ) : (
